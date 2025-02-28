@@ -13,14 +13,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rocketseat.igniteshoes"
+      "bundleIdentifier": "com.newgo.igniteshoes"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#121214"
       },
-      "package": "com.rocketseat.igniteshoes"
+      "package": "com.newgo.igniteshoes"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +33,28 @@
           "mode": "development"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "OneSignalNotificationServiceExtension",
+                  "bundleIdentifier": "com.newgo.igniteshoes.OneSignalNotificationServiceExtension",
+                  "entitlements": {
+                    "com.apple.security.application-groups": [
+                      "group.com.newgo.igniteshoes.onesignal"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "projectId": "63b73ea9-dc94-4010-8286-53a7f8c3ccf1"
+      }
+    }
   }
 }
