@@ -1,5 +1,9 @@
 import { OneSignal } from "react-native-onesignal"
 
+export function tagCardUpdate(itemsCount: string) {
+    OneSignal.User.addTag("cart_items_count", itemsCount)
+}
+
 export function tagUserInfoCreate() {
     OneSignal.User.addTags({
         "user_name": "Sergio Ribeiro",
@@ -14,4 +18,6 @@ export function tagUserEmailCreate(email: string) {
 
 export function tagUserEmailRemove() {
     OneSignal.User.removeTag("user_email")
+    OneSignal.User.removeTag("user_age")
+    OneSignal.User.removeTag("user_name")
 }

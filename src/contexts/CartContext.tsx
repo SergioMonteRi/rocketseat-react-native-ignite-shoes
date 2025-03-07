@@ -6,6 +6,7 @@ import {
   storageProductRemove,
   storageProductGetAll,
 } from '../storage/storageCart';
+import { tagCardUpdate } from '../notifications/notificationsTags';
 
 export type CartContextDataProps = {
   addProductCart: (newProduct: StorageCartProps) => Promise<void>;
@@ -26,6 +27,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     try {
       const storageResponse = await storageProductSave(newProduct);
       setCart(storageResponse);
+
+      tagCardUpdate(storageResponse.length.toString())
     } catch (error) {
       throw error;
     }
@@ -35,6 +38,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     try {
       const response = await storageProductRemove(productId);
       setCart(response);
+
+      tagCardUpdate(response.length.toString())
     } catch (error) {
       throw error;
     }

@@ -35,7 +35,7 @@ export default function App() {
 
   // tagUserEmailRemove()
 
-  tagUserInfoCreate();
+  // tagUserInfoCreate();
 
   useEffect(() => {
     const handleNotificationClick = (event: NotificationClickEvent) => {
